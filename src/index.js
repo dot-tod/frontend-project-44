@@ -43,6 +43,16 @@ const getGcd = (arr) => {
   }
   return commonDividers.at(-1);
 };
+const getArithmeticSequence = (sequenceLength) => {
+  let currentTerm = Math.floor(Math.random() * 10);
+  const commonDifference = Math.floor(Math.random() * 9 + 1);
+  const sequence = [];
+  for (let i = 0; i < sequenceLength; i += 1) {
+    sequence.push(currentTerm);
+    currentTerm += commonDifference;
+  }
+  return sequence;
+};
 
 const game = (gameRules, questions, rightAnswers) => {
   const userName = getUserName();
@@ -61,4 +71,6 @@ const game = (gameRules, questions, rightAnswers) => {
   printIfWinner(userName, score);
 };
 
-export { roundsQnty, getGcd, game };
+export {
+  roundsQnty, getGcd, getArithmeticSequence, game,
+};
