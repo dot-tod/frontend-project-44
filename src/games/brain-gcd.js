@@ -1,10 +1,12 @@
-import { roundsQnty, getCommonDivisors, game } from '../index.js';
+import {
+  roundsQnty, getCommonDivisors, getRandomInt, game,
+} from '../index.js';
 
 const getQuestions = () => {
   const questions = [];
   for (let i = 0; i < roundsQnty; i += 1) {
-    const firstRandomNumber = Math.floor(Math.random() * 100);
-    const secondRandomNumber = Math.floor(Math.random() * 100);
+    const firstRandomNumber = getRandomInt(0, 99);
+    const secondRandomNumber = getRandomInt(0, 99);
     questions.push(`${firstRandomNumber} ${secondRandomNumber}`);
   }
   return questions;

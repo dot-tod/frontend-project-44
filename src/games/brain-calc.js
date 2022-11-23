@@ -1,12 +1,12 @@
-import { roundsQnty, game } from '../index.js';
+import { roundsQnty, getRandomInt, game } from '../index.js';
 
 const getQuestions = () => {
   const questions = [];
   const operators = ['+', '-', '*'];
   for (let i = 0; i < roundsQnty; i += 1) {
-    const firstRandomOperand = Math.floor(Math.random() * 100);
-    const secondRandomOperand = Math.floor(Math.random() * 100);
-    const randomOperator = operators[Math.floor(Math.random() * 3)];
+    const firstRandomOperand = getRandomInt(0, 99);
+    const secondRandomOperand = getRandomInt(0, 99);
+    const randomOperator = operators[getRandomInt(0, 2)];
     questions.push(`${firstRandomOperand} ${randomOperator} ${secondRandomOperand}`);
   }
   return questions;

@@ -58,6 +58,10 @@ const getArithmeticSequence = (sequenceLength) => {
   }
   return sequence;
 };
+const getRandomInt = (min, max) => {
+  const randomInt = Math.floor(Math.random() * (max - min + 1)) + min;
+  return randomInt;
+};
 
 const game = (gameRules, questions, rightAnswers) => {
   const userName = getUserName();
@@ -77,5 +81,5 @@ const game = (gameRules, questions, rightAnswers) => {
 };
 
 export {
-  roundsQnty, getDivisors, getCommonDivisors, getArithmeticSequence, game,
+  roundsQnty, getDivisors, getCommonDivisors, getArithmeticSequence, getRandomInt, game,
 };

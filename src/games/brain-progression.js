@@ -1,13 +1,15 @@
-import { roundsQnty, getArithmeticSequence, game } from '../index.js';
+import {
+  roundsQnty, getArithmeticSequence, getRandomInt, game,
+} from '../index.js';
 
 const getQuestionsAndAnswers = () => {
   const questions = [];
   const sequences = [];
   const hiddenTerms = [];
   for (let i = 0; i < roundsQnty; i += 1) {
-    const sequenceLength = Math.floor(Math.random() * 5 + 5);
+    const sequenceLength = getRandomInt(5, 10);
     const sequence = getArithmeticSequence(sequenceLength);
-    const randomIndex = Math.floor(Math.random() * sequenceLength);
+    const randomIndex = getRandomInt(0, sequenceLength - 1);
     const hiddenTerm = sequence[randomIndex];
     sequence[randomIndex] = '..';
     sequences.push(sequence.join(' '));

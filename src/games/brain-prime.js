@@ -1,9 +1,11 @@
-import { roundsQnty, getDivisors, game } from '../index.js';
+import {
+  roundsQnty, getDivisors, getRandomInt, game,
+} from '../index.js';
 
 const getQuestions = () => {
   const questions = [];
   for (let i = 0; i < roundsQnty; i += 1) {
-    const question = Math.floor(Math.random() * 100);
+    const question = getRandomInt(0, 99);
     questions.push(question);
   }
   return questions;
