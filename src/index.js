@@ -1,4 +1,5 @@
 import readlineSync from 'readline-sync';
+import * as _ from 'lodash';
 
 const roundsQnty = 3;
 
@@ -34,14 +35,18 @@ const printIfWinner = (userName, score) => {
     console.log(`Congratulations, ${userName}!`);
   }
 };
-const getGcd = (arr) => {
-  const commonDividers = [];
-  if (arr[0] % arr[1] === 0) return arr[1];
-  if (arr[1] % arr[0] === 0) return arr[0];
-  for (let i = 1; i <= arr[0] / 2; i += 1) {
-    if (arr[0] % i === 0 && arr[1] % i === 0) commonDividers.push(i);
+const getDivisors = (num) => {
+  const divisors = [];
+  for (let i = 1; i <= num / 2; i += 1) {
+    if (num % i === 0) divisors.push(i);
   }
-  return commonDividers.at(-1);
+  return divisors;
+};
+const getCommonDivisors = (firstNum, secondNum) => {
+  const firstNumDivisors = getDivisors(firstNum);
+  const secondNumDivisors = getDivisors(secondNum);
+  const commonDivisors = _.intersection(firstNumDivisors, secondNumDivisors);
+  return commonDivisors;
 };
 const getArithmeticSequence = (sequenceLength) => {
   let currentTerm = Math.floor(Math.random() * 10);
@@ -72,5 +77,5 @@ const game = (gameRules, questions, rightAnswers) => {
 };
 
 export {
-  roundsQnty, getGcd, getArithmeticSequence, game,
+  roundsQnty, getDivisors, getCommonDivisors, getArithmeticSequence, game,
 };
