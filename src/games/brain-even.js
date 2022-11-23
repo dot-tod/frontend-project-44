@@ -18,11 +18,10 @@ const getRightAnswers = (questions) => {
   return rightAnswers;
 };
 
-const brainEven = () => {
-  const gameRules = 'Answer "yes" if the number is even, otherwise answer "no".';
-  const questions = getQuestions();
-  const rightAnswers = getRightAnswers(questions);
-  game(gameRules, questions, rightAnswers);
-};
+const gameRules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const questions = getQuestions();
+const rightAnswers = getRightAnswers(questions);
+
+const brainEven = game(gameRules, questions, rightAnswers);
 
 export default brainEven;
