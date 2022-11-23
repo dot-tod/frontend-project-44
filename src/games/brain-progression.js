@@ -19,11 +19,12 @@ const getQuestionsAndAnswers = () => {
   return questions;
 };
 
+const questionsAndAnswers = getQuestionsAndAnswers();
+const gameRules = 'What is the result of the expression?';
+const questions = questionsAndAnswers[0];
+const rightAnswers = questionsAndAnswers[1];
+
 const brainProgression = () => {
-  const questionsAndAnswers = getQuestionsAndAnswers();
-  const gameRules = 'What is the result of the expression?';
-  const questions = questionsAndAnswers[0];
-  const rightAnswers = questionsAndAnswers[1];
   game(gameRules, questions, rightAnswers);
 };
 
