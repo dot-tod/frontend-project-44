@@ -3,4 +3,11 @@
 
 [![Actions Status](https://github.com/dot-tod/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/dot-tod/frontend-project-44/actions)
 
+Brain-even:
 [![asciicast](https://asciinema.org/a/Ara9xSHBFmBrdfEKulzjVd91A.svg)](https://asciinema.org/a/Ara9xSHBFmBrdfEKulzjVd91A)
+
+Brain-calc:
+[![asciicast](https://asciinema.org/a/MhhS7xskWtLUPvuvZ58WqHdHt.svg)](https://asciinema.org/a/MhhS7xskWtLUPvuvZ58WqHdHt)
+
+Brain-gcd:
+[![asciicast](https://asciinema.org/a/cZaWHaHTWSOCpHUAgjYwuKtps.svg)](https://asciinema.org/a/cZaWHaHTWSOCpHUAgjYwuKtps)
