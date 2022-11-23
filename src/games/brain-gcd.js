@@ -1,4 +1,4 @@
-import { roundsQnty, getGcd, game } from '../index.js';
+import { roundsQnty, getCommonDivisors, game } from '../index.js';
 
 const getQuestions = () => {
   const questions = [];
@@ -14,8 +14,9 @@ const getRightAnswers = (questions) => {
   const rightAnswers = [];
   for (let i = 0; i < 3; i += 1) {
     const question = questions[i].split(' ');
-    const rightAnswer = getGcd(question);
-    rightAnswers.push(String(rightAnswer));
+    const commonDivisors = getCommonDivisors(question);
+    const maxCommonDivisor = commonDivisors.at(-1);
+    rightAnswers.push(String(maxCommonDivisor));
   }
   return rightAnswers;
 };
