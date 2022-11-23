@@ -1,14 +1,4 @@
-import { roundsQnty, game } from '../index.js';
-
-const getGcd = (arr) => {
-  const commonDividers = [];
-  if (arr[0] % arr[1] === 0) return arr[1];
-  if (arr[1] % arr[0] === 0) return arr[0];
-  for (let i = 1; i <= arr[0] / 2; i += 1) {
-    if (arr[0] % i === 0 && arr[1] % i === 0) commonDividers.push(i);
-  }
-  return commonDividers.at(-1);
-};
+import { roundsQnty, getGcd, game } from '../index.js';
 
 const getQuestions = () => {
   const questions = [];
