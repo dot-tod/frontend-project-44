@@ -23,7 +23,7 @@ const getRightAnswers = (questions) => {
   return rightAnswers;
 };
 
-const gameRules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const gameRules = 'Find the greatest common divisor of given numbers.';
 const questions = getQuestions();
 const rightAnswers = getRightAnswers(questions);
 

@@ -27,7 +27,7 @@ const getRightAnswers = (questions) => {
   return rightAnswers;
 };
 
-const gameRules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const gameRules = 'What is the result of the expression?';
 const questions = getQuestions();
 const rightAnswers = getRightAnswers(questions);
 

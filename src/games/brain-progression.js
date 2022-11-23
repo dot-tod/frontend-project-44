@@ -20,7 +20,7 @@ const getQuestionsAndAnswers = () => {
 };
 
 const questionsAndAnswers = getQuestionsAndAnswers();
-const gameRules = 'What is the result of the expression?';
+const gameRules = 'What number is missing in the progression?';
 const questions = questionsAndAnswers[0];
 const rightAnswers = questionsAndAnswers[1];
 
