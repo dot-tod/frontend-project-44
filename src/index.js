@@ -1,5 +1,4 @@
 import readlineSync from 'readline-sync';
-import * as _ from 'lodash';
 
 const roundsQnty = 3;
 
@@ -35,8 +34,12 @@ const printIfWinner = (userName, score) => {
     console.log(`Congratulations, ${userName}!`);
   }
 };
+const getRandomInt = (min, max) => {
+  const randomInt = Math.floor(Math.random() * (max - min + 1)) + min;
+  return randomInt;
+};
 const getDivisors = (num) => {
-  const divisors = [];
+  const divisors = [1];
   for (let i = 1; i <= num / 2; i += 1) {
     if (num % i === 0) divisors.push(i);
   }
@@ -45,22 +48,23 @@ const getDivisors = (num) => {
 const getCommonDivisors = (firstNum, secondNum) => {
   const firstNumDivisors = getDivisors(firstNum);
   const secondNumDivisors = getDivisors(secondNum);
-  const commonDivisors = _.intersection(firstNumDivisors, secondNumDivisors);
+  const commonDivisors = [];
+  for (let i = 0; i < firstNumDivisors.length; i += 1) {
+    if (secondNumDivisors.includes(firstNumDivisors[i])) commonDivisors.push(firstNumDivisors[i]);
+  }
+  if (firstNum % secondNum === 0) commonDivisors.push(secondNum);
+  if (secondNum % firstNum === 0) commonDivisors.push(firstNum);
   return commonDivisors;
 };
 const getArithmeticSequence = (sequenceLength) => {
-  let currentTerm = Math.floor(Math.random() * 10);
-  const commonDifference = Math.floor(Math.random() * 9 + 1);
+  let currentTerm = getRandomInt(0, 10);
+  const commonDifference = getRandomInt(1, 9);
   const sequence = [];
   for (let i = 0; i < sequenceLength; i += 1) {
     sequence.push(currentTerm);
     currentTerm += commonDifference;
   }
   return sequence;
-};
-const getRandomInt = (min, max) => {
-  const randomInt = Math.floor(Math.random() * (max - min + 1)) + min;
-  return randomInt;
 };
 
 const game = (gameRules, questions, rightAnswers) => {

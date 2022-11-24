@@ -5,7 +5,7 @@ import {
 const getQuestions = () => {
   const questions = [];
   for (let i = 0; i < roundsQnty; i += 1) {
-    const question = getRandomInt(0, 99);
+    const question = getRandomInt(1, 99);
     questions.push(question);
   }
   return questions;
@@ -13,7 +13,7 @@ const getQuestions = () => {
 
 const getRightAnswers = (questions) => {
   const rightAnswers = [];
-  for (let i = 0; i < 3; i += 1) {
+  for (let i = 0; i < roundsQnty; i += 1) {
     const question = questions[i];
     const divisors = getDivisors(question);
     const rightAnswer = divisors.length === 1 ? 'yes' : 'no';

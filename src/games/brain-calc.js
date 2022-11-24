@@ -4,8 +4,8 @@ const getQuestions = () => {
   const questions = [];
   const operators = ['+', '-', '*'];
   for (let i = 0; i < roundsQnty; i += 1) {
-    const firstRandomOperand = getRandomInt(0, 99);
-    const secondRandomOperand = getRandomInt(0, 99);
+    const firstRandomOperand = getRandomInt(1, 99);
+    const secondRandomOperand = getRandomInt(1, 99);
     const randomOperator = operators[getRandomInt(0, 2)];
     questions.push(`${firstRandomOperand} ${randomOperator} ${secondRandomOperand}`);
   }
@@ -14,7 +14,7 @@ const getQuestions = () => {
 
 const getRightAnswers = (questions) => {
   const rightAnswers = [];
-  for (let i = 0; i < 3; i += 1) {
+  for (let i = 0; i < roundsQnty; i += 1) {
     const question = questions[i].split(' ');
     const firstOperand = Number(question[0]);
     const secondOperand = Number(question[2]);
