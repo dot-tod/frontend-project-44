@@ -12,5 +12,8 @@ Brain-calc:
 Brain-gcd:
 [![asciicast](https://asciinema.org/a/cZaWHaHTWSOCpHUAgjYwuKtps.svg)](https://asciinema.org/a/cZaWHaHTWSOCpHUAgjYwuKtps)
 
-brain-progression
+Brain-progression
 [![asciicast](https://asciinema.org/a/FkkAwmIipkckSY6gcBv6IsX3r.svg)](https://asciinema.org/a/FkkAwmIipkckSY6gcBv6IsX3r)
+
+Brain-prime
+[![asciicast](https://asciinema.org/a/kT6vOTPWjFGpy0RDYWnC22PkU.svg)](https://asciinema.org/a/kT6vOTPWjFGpy0RDYWnC22PkU)
