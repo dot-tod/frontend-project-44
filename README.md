@@ -9,7 +9,9 @@ git pull git@github.com:dot-tod/frontend-project-44.git
 npm ci
 ```
 
-## Run brain-even
+## Check Even or Odd
+
+## Run game
 
 ```bash
 brain-even
@@ -17,7 +19,9 @@ brain-even
 
 [![asciicast](https://asciinema.org/a/Ara9xSHBFmBrdfEKulzjVd91A.svg)](https://asciinema.org/a/Ara9xSHBFmBrdfEKulzjVd91A)
 
-## Run brain-calc
+## Brain Calculator
+
+## Run game
 
 ```bash
 brain-calc
@@ -25,7 +29,9 @@ brain-calc
 
 [![asciicast](https://asciinema.org/a/MhhS7xskWtLUPvuvZ58WqHdHt.svg)](https://asciinema.org/a/MhhS7xskWtLUPvuvZ58WqHdHt)
 
-## Run brain-gcd
+## The Greatest Common Divisor
+
+## Run game
 
 ```bash
 brain-gcd
@@ -33,7 +39,9 @@ brain-gcd
 
 [![asciicast](https://asciinema.org/a/cZaWHaHTWSOCpHUAgjYwuKtps.svg)](https://asciinema.org/a/cZaWHaHTWSOCpHUAgjYwuKtps)
 
-## Run brain-progression
+## Arithmetic Progression
+
+## Run game
 
 ```bash
 brain-progression
@@ -41,7 +49,9 @@ brain-progression
 
 [![asciicast](https://asciinema.org/a/9UzXyrGj2cNDCr2fUa87S3SHW.svg)](https://asciinema.org/a/9UzXyrGj2cNDCr2fUa87S3SHW)
 
-## Run brain-prime
+## Is This Prime?
+
+## Run game
 
 ```bash
 brain-prime
