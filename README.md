@@ -11,8 +11,7 @@ npm ci
 
 ## Check Even or Odd
 
-## Run game
-
+Run game
 ```bash
 brain-even
 ```
@@ -21,8 +20,7 @@ brain-even
 
 ## Brain Calculator
 
-## Run game
-
+Run game
 ```bash
 brain-calc
 ```
@@ -31,8 +29,7 @@ brain-calc
 
 ## The Greatest Common Divisor
 
-## Run game
-
+Run game
 ```bash
 brain-gcd
 ```
@@ -41,8 +38,7 @@ brain-gcd
 
 ## Arithmetic Progression
 
-## Run game
-
+Run game
 ```bash
 brain-progression
 ```
@@ -51,8 +47,7 @@ brain-progression
 
 ## Is This Prime?
 
-## Run game
-
+Run game
 ```bash
 brain-prime
 ```
