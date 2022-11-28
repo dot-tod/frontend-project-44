@@ -6,7 +6,7 @@ const getRandomInt = (min, max) => {
   return randomInt;
 };
 const getDivisors = (num) => {
-  const divisors = [1];
+  const divisors = [];
   for (let i = 1; i <= num / 2; i += 1) {
     if (num % i === 0) divisors.push(i);
   }
