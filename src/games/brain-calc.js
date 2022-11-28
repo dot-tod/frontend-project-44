@@ -9,7 +9,7 @@ const getQuestions = () => {
   for (let i = 0; i < ROUNDS_COUNT; i += 1) {
     const firstRandomOperand = getRandomInt(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
     const secondRandomOperand = getRandomInt(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
-    const randomOperator = operators[getRandomInt(0, operators.length)];
+    const randomOperator = operators[getRandomInt(0, operators.length - 1)];
     questions.push(`${firstRandomOperand} ${randomOperator} ${secondRandomOperand}`);
   }
   return questions;
