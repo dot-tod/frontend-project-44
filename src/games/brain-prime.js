@@ -1,11 +1,12 @@
 import {
-  roundsQnty, getDivisors, getRandomInt, game,
-} from '../index.js';
+  MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER, getDivisors, getRandomInt,
+} from '../math.js';
+import { ROUNDS_COUNT, playGame } from '../index.js';
 
 const getQuestions = () => {
   const questions = [];
-  for (let i = 0; i < roundsQnty; i += 1) {
-    const question = getRandomInt(1, 99);
+  for (let i = 0; i < ROUNDS_COUNT; i += 1) {
+    const question = getRandomInt(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
     questions.push(question);
   }
   return questions;
@@ -13,7 +14,7 @@ const getQuestions = () => {
 
 const getRightAnswers = (questions) => {
   const rightAnswers = [];
-  for (let i = 0; i < roundsQnty; i += 1) {
+  for (let i = 0; i < ROUNDS_COUNT; i += 1) {
     const question = questions[i];
     const divisors = getDivisors(question);
     const rightAnswer = divisors.length === 1 ? 'yes' : 'no';
@@ -22,12 +23,12 @@ const getRightAnswers = (questions) => {
   return rightAnswers;
 };
 
-const gameRules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const GAME_RULES = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 const questions = getQuestions();
 const rightAnswers = getRightAnswers(questions);
 
 const brainPrime = () => {
-  game(gameRules, questions, rightAnswers);
+  playGame(GAME_RULES, questions, rightAnswers);
 };
 
 export default brainPrime;

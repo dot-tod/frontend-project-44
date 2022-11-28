@@ -1,12 +1,15 @@
-import { roundsQnty, getRandomInt, game } from '../index.js';
+import {
+  MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER, getRandomInt,
+} from '../math.js';
+import { ROUNDS_COUNT, playGame } from '../index.js';
 
 const getQuestions = () => {
   const questions = [];
   const operators = ['+', '-', '*'];
-  for (let i = 0; i < roundsQnty; i += 1) {
-    const firstRandomOperand = getRandomInt(1, 99);
-    const secondRandomOperand = getRandomInt(1, 99);
-    const randomOperator = operators[getRandomInt(0, 2)];
+  for (let i = 0; i < ROUNDS_COUNT; i += 1) {
+    const firstRandomOperand = getRandomInt(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
+    const secondRandomOperand = getRandomInt(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
+    const randomOperator = operators[getRandomInt(0, operators.length)];
     questions.push(`${firstRandomOperand} ${randomOperator} ${secondRandomOperand}`);
   }
   return questions;
@@ -14,7 +17,7 @@ const getQuestions = () => {
 
 const getRightAnswers = (questions) => {
   const rightAnswers = [];
-  for (let i = 0; i < roundsQnty; i += 1) {
+  for (let i = 0; i < ROUNDS_COUNT; i += 1) {
     const question = questions[i].split(' ');
     const firstOperand = Number(question[0]);
     const secondOperand = Number(question[2]);
@@ -27,12 +30,12 @@ const getRightAnswers = (questions) => {
   return rightAnswers;
 };
 
-const gameRules = 'What is the result of the expression?';
+const GAME_RULES = 'What is the result of the expression?';
 const questions = getQuestions();
 const rightAnswers = getRightAnswers(questions);
 
 const brainCalc = () => {
-  game(gameRules, questions, rightAnswers);
+  playGame(GAME_RULES, questions, rightAnswers);
 };
 
 export default brainCalc;
