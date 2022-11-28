@@ -15,7 +15,6 @@ npm ci
 brain-even
 ```
 
-Brain-even:
 [![asciicast](https://asciinema.org/a/Ara9xSHBFmBrdfEKulzjVd91A.svg)](https://asciinema.org/a/Ara9xSHBFmBrdfEKulzjVd91A)
 
 ## Run brain-calc
@@ -24,7 +23,6 @@ Brain-even:
 brain-calc
 ```
 
-Brain-calc:
 [![asciicast](https://asciinema.org/a/MhhS7xskWtLUPvuvZ58WqHdHt.svg)](https://asciinema.org/a/MhhS7xskWtLUPvuvZ58WqHdHt)
 
 ## Run brain-gcd
@@ -33,7 +31,6 @@ Brain-calc:
 brain-gcd
 ```
 
-Brain-gcd:
 [![asciicast](https://asciinema.org/a/cZaWHaHTWSOCpHUAgjYwuKtps.svg)](https://asciinema.org/a/cZaWHaHTWSOCpHUAgjYwuKtps)
 
 ## Run brain-progression
@@ -42,7 +39,6 @@ Brain-gcd:
 brain-progression
 ```
 
-Brain-progression
 [![asciicast](https://asciinema.org/a/9UzXyrGj2cNDCr2fUa87S3SHW.svg)](https://asciinema.org/a/9UzXyrGj2cNDCr2fUa87S3SHW)
 
 ## Run brain-prime
@@ -51,5 +47,4 @@ Brain-progression
 brain-prime
 ```
 
-Brain-prime
 [![asciicast](https://asciinema.org/a/kT6vOTPWjFGpy0RDYWnC22PkU.svg)](https://asciinema.org/a/kT6vOTPWjFGpy0RDYWnC22PkU)
