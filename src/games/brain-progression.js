@@ -36,7 +36,7 @@ const getQuestionsAndAnswers = () => {
 };
 
 const QUESTIONS_INDEX = 0;
-const ANSWERS_INDEX = 0;
+const ANSWERS_INDEX = 1;
 const questionsAndAnswers = getQuestionsAndAnswers();
 const GAME_RULES = 'What number is missing in the progression?';
 const questions = questionsAndAnswers[QUESTIONS_INDEX];
