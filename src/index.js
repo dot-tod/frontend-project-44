@@ -1,4 +1,4 @@
-import * as console from './console.js';
+import * as interaction from './interaction.js';
 
 const ROUNDS_COUNT = 3;
 
@@ -11,20 +11,20 @@ const checkUserAnswer = (userAnswer, rightAnswer) => {
 };
 
 const playGame = (GAME_RULES, questions, rightAnswers) => {
-  const userName = console.getUserName();
-  console.printRules(GAME_RULES);
+  const userName = interaction.getUserName();
+  interaction.printRules(GAME_RULES);
   let score = 0;
   for (let i = 0; i < ROUNDS_COUNT; i += 1) {
-    console.printQuestion(questions[i]);
-    const userAnswer = console.getUserAnswer();
+    interaction.printQuestion(questions[i]);
+    const userAnswer = interaction.getUserAnswer();
     if (checkUserAnswer(userAnswer, rightAnswers[i])) {
       score += 1;
     } else {
-      console.printWrongAnswer(userName, userAnswer, rightAnswers[i]);
+      interaction.printWrongAnswer(userName, userAnswer, rightAnswers[i]);
       break;
     }
   }
-  console.printIfWinner(userName, score, ROUNDS_COUNT);
+  interaction.printIfWinner(userName, score, ROUNDS_COUNT);
 };
 
 export { ROUNDS_COUNT, playGame };
