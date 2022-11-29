@@ -17,7 +17,7 @@ const getCommonDivisors = (firstNum, secondNum) => {
 
 const getQuestions = () => {
   const questions = [];
-  for (let i = 0; i < ROUNDS_COUNT; i += 1) {
+  for (let questionNumber = 0; questionNumber < ROUNDS_COUNT; questionNumber += 1) {
     const firstRandomNumber = getRandomInt(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
     const secondRandomNumber = getRandomInt(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
     questions.push(`${firstRandomNumber} ${secondRandomNumber}`);
@@ -27,10 +27,12 @@ const getQuestions = () => {
 
 const getRightAnswers = (questions) => {
   const rightAnswers = [];
-  for (let i = 0; i < ROUNDS_COUNT; i += 1) {
-    const question = questions[i].split(' ');
-    const firstNum = Number(question[0]);
-    const secondNum = Number(question[1]);
+  const FIRST_NUMBER_INDEX = 0;
+  const SECOND_NUMBER_INDEX = 0;
+  for (let questionNumber = 0; questionNumber < ROUNDS_COUNT; questionNumber += 1) {
+    const question = questions[questionNumber].split(' ');
+    const firstNum = Number(question[FIRST_NUMBER_INDEX]);
+    const secondNum = Number(question[SECOND_NUMBER_INDEX]);
     const commonDivisors = getCommonDivisors(firstNum, secondNum);
     const maxCommonDivisor = commonDivisors.at(-1);
     rightAnswers.push(String(maxCommonDivisor));

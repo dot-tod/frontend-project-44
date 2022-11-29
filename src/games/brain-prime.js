@@ -5,7 +5,7 @@ import { ROUNDS_COUNT, playGame } from '../index.js';
 
 const getQuestions = () => {
   const questions = [];
-  for (let i = 0; i < ROUNDS_COUNT; i += 1) {
+  for (let questionNumber = 0; questionNumber < ROUNDS_COUNT; questionNumber += 1) {
     const question = getRandomInt(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
     questions.push(question);
   }
@@ -14,8 +14,8 @@ const getQuestions = () => {
 
 const getRightAnswers = (questions) => {
   const rightAnswers = [];
-  for (let i = 0; i < ROUNDS_COUNT; i += 1) {
-    const question = questions[i];
+  for (let questionNumber = 0; questionNumber < ROUNDS_COUNT; questionNumber += 1) {
+    const question = questions[questionNumber];
     const divisors = getDivisors(question);
     const rightAnswer = divisors.length === 1 ? 'yes' : 'no';
     rightAnswers.push(rightAnswer);

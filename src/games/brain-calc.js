@@ -6,7 +6,7 @@ import { ROUNDS_COUNT, playGame } from '../index.js';
 const getQuestions = () => {
   const questions = [];
   const operators = ['+', '-', '*'];
-  for (let i = 0; i < ROUNDS_COUNT; i += 1) {
+  for (let questionNumber = 0; questionNumber < ROUNDS_COUNT; questionNumber += 1) {
     const firstRandomOperand = getRandomInt(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
     const secondRandomOperand = getRandomInt(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
     const randomOperator = operators[getRandomInt(0, operators.length - 1)];
@@ -17,14 +17,18 @@ const getQuestions = () => {
 
 const getRightAnswers = (questions) => {
   const rightAnswers = [];
-  for (let i = 0; i < ROUNDS_COUNT; i += 1) {
-    const question = questions[i].split(' ');
-    const firstOperand = Number(question[0]);
-    const secondOperand = Number(question[2]);
+  const FIRST_OPERAND_INDEX = 0;
+  const SECOND_OPERAND_INDEX = 2;
+  const OPERATOR_INDEX = 1;
+
+  for (let questionNumber = 0; questionNumber < ROUNDS_COUNT; questionNumber += 1) {
+    const question = questions[questionNumber].split(' ');
+    const firstOperand = Number(question[FIRST_OPERAND_INDEX]);
+    const secondOperand = Number(question[SECOND_OPERAND_INDEX]);
     let rightAnswer;
-    if (question[1] === '+') rightAnswer = firstOperand + secondOperand;
-    if (question[1] === '-') rightAnswer = firstOperand - secondOperand;
-    if (question[1] === '*') rightAnswer = firstOperand * secondOperand;
+    if (question[OPERATOR_INDEX] === '+') rightAnswer = firstOperand + secondOperand;
+    if (question[OPERATOR_INDEX] === '-') rightAnswer = firstOperand - secondOperand;
+    if (question[OPERATOR_INDEX] === '*') rightAnswer = firstOperand * secondOperand;
     rightAnswers.push(String(rightAnswer));
   }
   return rightAnswers;

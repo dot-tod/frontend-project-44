@@ -22,7 +22,7 @@ const getQuestionsAndAnswers = () => {
   const questions = [];
   const sequences = [];
   const hiddenTerms = [];
-  for (let i = 0; i < ROUNDS_COUNT; i += 1) {
+  for (let questionNumber = 0; questionNumber < ROUNDS_COUNT; questionNumber += 1) {
     const sequenceLength = getRandomInt(MIN_SEQUENCE_LENGTH, MAX_SEQUENCE_LENGTH);
     const sequence = getArithmeticSequence(sequenceLength);
     const randomIndex = getRandomInt(0, sequenceLength - 1);
@@ -35,10 +35,12 @@ const getQuestionsAndAnswers = () => {
   return questions;
 };
 
+const QUESTIONS_INDEX = 0;
+const ANSWERS_INDEX = 0;
 const questionsAndAnswers = getQuestionsAndAnswers();
 const GAME_RULES = 'What number is missing in the progression?';
-const questions = questionsAndAnswers[0];
-const rightAnswers = questionsAndAnswers[1];
+const questions = questionsAndAnswers[QUESTIONS_INDEX];
+const rightAnswers = questionsAndAnswers[ANSWERS_INDEX];
 
 const brainProgression = () => {
   playGame(GAME_RULES, questions, rightAnswers);

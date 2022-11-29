@@ -20,13 +20,6 @@ const getUserAnswer = () => {
   const userAnswer = readlineSync.question('Your answer: ');
   return userAnswer;
 };
-const checkUserAnswer = (userAnswer, rightAnswer) => {
-  if (userAnswer === rightAnswer) {
-    console.log('Correct!');
-    return true;
-  }
-  return false;
-};
 const printWrongAnswer = (userName, wrongAnswer, rightAnswer) => {
   console.log(`'${wrongAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.`);
   console.log(`Let's try again, ${userName}!`);
@@ -38,6 +31,6 @@ const printIfWinner = (userName, score, ROUNDS_COUNT) => {
 };
 
 export {
-  getUserName, printRules, printQuestion, getUserAnswer, checkUserAnswer, printWrongAnswer,
+  getUserName, printRules, printQuestion, getUserAnswer, printWrongAnswer,
   printIfWinner,
 };
