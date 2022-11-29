@@ -28,7 +28,7 @@ const getQuestions = () => {
 const getRightAnswers = (questions) => {
   const rightAnswers = [];
   const FIRST_NUMBER_INDEX = 0;
-  const SECOND_NUMBER_INDEX = 0;
+  const SECOND_NUMBER_INDEX = 1;
   for (let questionNumber = 0; questionNumber < ROUNDS_COUNT; questionNumber += 1) {
     const question = questions[questionNumber].split(' ');
     const firstNum = Number(question[FIRST_NUMBER_INDEX]);
