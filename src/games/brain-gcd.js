@@ -1,18 +1,13 @@
 import {
-  MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER, getRandomInt, getDivisors,
+  MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER, getRandomInt,
 } from '../math.js';
 import { ROUNDS_COUNT, playGame } from '../index.js';
 
-const getCommonDivisors = (firstNum, secondNum) => {
-  const firstNumDivisors = getDivisors(firstNum);
-  const secondNumDivisors = getDivisors(secondNum);
-  const commonDivisors = [];
-  for (let i = 0; i < firstNumDivisors.length; i += 1) {
-    if (secondNumDivisors.includes(firstNumDivisors[i])) commonDivisors.push(firstNumDivisors[i]);
+const getCommonDivisor = (firstNum, secondNum) => {
+  if (secondNum === 0) {
+    return firstNum;
   }
-  if (firstNum % secondNum === 0) commonDivisors.push(secondNum);
-  if (secondNum % firstNum === 0) commonDivisors.push(firstNum);
-  return commonDivisors;
+  return getCommonDivisor(secondNum, firstNum % secondNum);
 };
 
 const getQuestions = () => {
@@ -33,9 +28,8 @@ const getRightAnswers = (questions) => {
     const question = questions[questionNumber].split(' ');
     const firstNum = Number(question[FIRST_NUMBER_INDEX]);
     const secondNum = Number(question[SECOND_NUMBER_INDEX]);
-    const commonDivisors = getCommonDivisors(firstNum, secondNum);
-    const maxCommonDivisor = commonDivisors.at(-1);
-    rightAnswers.push(String(maxCommonDivisor));
+    const commonDivisor = getCommonDivisor(firstNum, secondNum);
+    rightAnswers.push(String(commonDivisor));
   }
   return rightAnswers;
 };
