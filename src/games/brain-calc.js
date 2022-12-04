@@ -3,6 +3,19 @@ import {
 } from '../math.js';
 import { ROUNDS_COUNT, playGame } from '../index.js';
 
+const calc = (operator, firstOperand, secondOperand) => {
+  let result;
+  switch (operator) {
+    case '+': result = firstOperand + secondOperand;
+      break;
+    case '-': result = firstOperand - secondOperand;
+      break;
+    default: result = firstOperand * secondOperand;
+      break;
+  }
+  return result;
+};
+
 const getQuestions = () => {
   const questions = [];
   const operators = ['+', '-', '*'];
@@ -25,10 +38,8 @@ const getRightAnswers = (questions) => {
     const question = questions[questionNumber].split(' ');
     const firstOperand = Number(question[FIRST_OPERAND_INDEX]);
     const secondOperand = Number(question[SECOND_OPERAND_INDEX]);
-    let rightAnswer;
-    if (question[OPERATOR_INDEX] === '+') rightAnswer = firstOperand + secondOperand;
-    if (question[OPERATOR_INDEX] === '-') rightAnswer = firstOperand - secondOperand;
-    if (question[OPERATOR_INDEX] === '*') rightAnswer = firstOperand * secondOperand;
+    const operator = question[OPERATOR_INDEX];
+    const rightAnswer = calc(operator, firstOperand, secondOperand);
     rightAnswers.push(String(rightAnswer));
   }
   return rightAnswers;
