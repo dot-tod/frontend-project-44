@@ -1,7 +1,15 @@
 import {
-  MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER, getDivisors, getRandomInt,
+  MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER, getRandomInt,
 } from '../math.js';
 import { ROUNDS_COUNT, playGame } from '../index.js';
+
+const getDivisors = (num) => {
+  const divisors = [];
+  for (let i = 1; i <= num / 2; i += 1) {
+    if (num % i === 0) divisors.push(i);
+  }
+  return divisors;
+};
 
 const getQuestions = () => {
   const questions = [];
